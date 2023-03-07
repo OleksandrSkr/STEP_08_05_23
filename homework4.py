@@ -1,10 +1,11 @@
 #manager_John = input("Enter the sales manager John level $ : ")
 #print("Sales manager John level = " + manager_John)
-##manager_Bob = input("Enter the sales manager Bob level $ : ")
+#manager_Bob = input("Enter the sales manager Bob level $ : ")
 #manager_Mike = input("Enter the sales manager Mike level $ : ")
-#best_manager = max(int(manager_John), int(manager_Bob) , int(manager_Mike))
+
+#managers = max(int(manager_John), int(manager_Bob) , int(manager_Mike))
 #best_manager = max(manager_John, manager_Bob , manager_Mike)
-#print(best_manager)
+#print(managers)
 
 managers = []
 
@@ -24,4 +25,9 @@ manager_3 = {
 }
 managers.append(manager_3)
 print(managers)
-best_manager = max(managers[0:1]int(manager_John), int(manager_Bob) , int(manager_Mike))
+i = 0
+
+while i < len(managers):
+    manager = managers[i] 
+    print(manager["name"])
+    i += 1
