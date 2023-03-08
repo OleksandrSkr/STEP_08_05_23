@@ -1,36 +1,69 @@
-#manager_John = input("Enter the sales manager John level $ : ")
-#print("Sales manager John level = " + manager_John)
-#manager_Bob = input("Enter the sales manager Bob level $ : ")
-#manager_Mike = input("Enter the sales manager Mike level $ : ")
-
-#managers = max(int(manager_John), int(manager_Bob) , int(manager_Mike))
-#best_manager = max(manager_John, manager_Bob , manager_Mike)
-#print(managers)
-
-managers = []
-
-manager_1 = {
-    "name" : input("Enter name first manager : "),
-    "sales" : input("Enter sales first manager : ")
+manager_f = {
+    "manager" : input("Enter name first manager : "),
+    "sales" : input("Enter sales first manager : "),
+    "money" : 0 ,
+    "reword" : 0
 }
-managers.append(manager_1)
-manager_2 = {
-    "name" : input("Enter name second manager : "),
-    "sales" : input("Enter sales second manager : ")
-}
-managers.append(manager_2)
-manager_3 = {
-    "name" : input("Enter name third manager : "),
-    "sales" : input("Enter sales third manager : ")
-}
-managers.append(manager_3)
-print(managers)
-#print(managers["sales"])
+sales_f = int(manager_f["sales"])
+if sales_f <= 500:
+    money_f = 200 + 0.03*sales_f
+elif sales_f > 500 and sales_f <= 1000:
+    money_f = 200 + 0.05*sales_f
+else:
+    money_f = 200 + 0.08*sales_f
+manager_f["money"] = money_f
 
-i = 0
-while i < len(managers):
-    manager = managers[i] 
-    #print(manager["name"])
-    print(manager["sales"])
-    i += 1
+manager_s = {
+    "manager" : input("Enter name second manager : "),
+    "sales" : input("Enter sales second manager : "),
+    "money" : 0 ,
+    "reword" : 0
+}
+sales_s = int(manager_s["sales"])
+if sales_s <= 500:
+    money_s = 200 + 0.03*sales_s
+elif sales_s > 500 and sales_s <= 1000:
+    money_s = 200 + 0.05*sales_s
+else:
+    money_s = 200 + 0.08*sales_s
+manager_s["money"] = money_s
 
+manager_t = {
+    "manager" : input("Enter name third manager : "),
+    "sales" : input("Enter sales third manager : "),
+    "money" : 0 ,
+    "reword" : 0
+}
+sales_t = int(manager_t["sales"])
+if sales_t <= 500:
+    money_t = 200 + 0.03*sales_t
+elif sales_t > 500 and sales_t <= 1000:
+    money_t = 200 + 0.05*sales_t
+else:
+    money_t = 200 + 0.08*sales_t
+manager_t["money"] = money_t
+
+
+if int(manager_f["sales"]) > int(manager_s["sales"]):
+    if int(manager_f["sales"]) > int(manager_t["sales"]):
+        best_manager = manager_f["manager"]
+        print("best manager : "   + best_manager)
+        manager_f["reword"] = 200
+    else:
+        best_manager = manager_t["manager"]
+        print("best manager : "  + best_manager)
+        manager_t["reword"] = 200
+else:
+    if int(manager_s["sales"]) > int(manager_t["sales"]):
+        best_manager = manager_s["manager"]
+        print("best manager : " +  best_manager)
+        manager_s["reword"] = 200
+    else:
+        best_manager = manager_t["manager"]
+        print("best manager : " + best_manager)
+        manager_t["reword"] = 200
+
+print(manager_f)
+print(manager_s)
+print(manager_t)
+        
