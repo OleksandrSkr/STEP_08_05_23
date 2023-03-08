@@ -25,9 +25,12 @@ manager_3 = {
 }
 managers.append(manager_3)
 print(managers)
-i = 0
+#print(managers["sales"])
 
+i = 0
 while i < len(managers):
     manager = managers[i] 
-    print(manager["name"])
+    #print(manager["name"])
+    print(manager["sales"])
     i += 1
+
