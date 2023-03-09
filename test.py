@@ -1,70 +1,57 @@
-manager_f = {
-    "manager" : input("Enter name first manager : "),
-    "sales" : input("Enter sales first manager : "),
-    "money" : 0 ,
-    "reword" : 0
+print("Enter the cost of 1 second of phone conversation for different operators, UA/second")
+
+tariffs = {
+    "KyivStar-KyivStar" : input("Enter tariff KyivStar-KyivStar : "),
+    "KyivStar-Vadafon" : input("Enter tariff KyivStar-Vadafon : "),
+    "KyivStar-Life" :  input("Enter tariff KyivStar-Life : "),
+    "Vadafon-Vadafon" :  input("Enter tariff Vadafon-Vadafon : "),
+    "Vadafon-KyivStar" :  input("Enter tariff Vadafon-KyivStar : "),
+    "Vadafon-Life" :  input("Enter tariff Vadafon-Life : "),
+    "Life-Life" :  input("Enter tariff Life-Life : "),
+    "Life-KyivStar" :  input("Enter tariff Life-KyivStar : "),
+    "Life-Vadafon" :  input("Enter tariff Life-Vadafon : "),
 }
-sales_f = int(manager_f["sales"])
-if sales_f <= 500:
-    money_f = 200 + 0.03*sales_f
-elif sales_f > 500 and sales_f <= 1000:
-    money_f = 200 + 0.05*sales_f
+print("Select the operator from which you will call and the operator to whom you will call")
+
+call_operator = input("""
+    1) KyivStar-KyivStar
+    2) KyivStar-Vadafon
+    3) KyivStar-Life
+    4) Vadafon-Vadafon
+    5) Vadafon-KyivStar 
+    6) Vadafon-Life
+    7) Life-Life
+    8) Life-KyivStar
+    9) Life-Vadafon
+""")
+call_time = input("Enter the time of the phone call second : " )
+
+if call_operator == "1":
+    cost = int(call_time) * int(tariffs["KyivStar-KyivStar"])
+    print(cost)
+elif call_operator == "2":
+    cost = int(call_time) * int(tariffs["KyivStar-Vadafon"])
+    print("the cost of a telephone conversation is UA : " + cost)
+elif call_operator == "3":
+    cost = int(call_time) * int(tariffs["KyivStar-Life"])
+    print("the cost of a telephone conversation is UA : " + cost)
+elif call_operator == "4":
+    cost = int(call_time) * int(tariffs["Vadafon-Vadafon"])
+    print("the cost of a telephone conversation is UA : " + cost)
+elif call_operator == "5":
+    cost = int(call_time) * int(tariffs["Vadafon-KyivStar"])
+    print("the cost of a telephone conversation is UA : " + cost)
+elif call_operator == "6":
+    cost = int(call_time) * int(tariffs["Vadafon-Life"])
+    print("the cost of a telephone conversation is UA : " + cost)
+elif call_operator == "7":
+    cost = int(call_time) * int(tariffs["Life-Life"])
+    print("the cost of a telephone conversation is UA : " + cost)
+elif call_operator == "8":
+    cost = int(call_time) * int(tariffs["Life-KyivStar"])
+    print("the cost of a telephone conversation is UA : " + cost)
+elif call_operator == "9":
+    cost = int(call_time) * int(tariffs["Life-Vadafon"])
+    print("the cost of a telephone conversation is UA : " + cost)
 else:
-    money_f = 200 + 0.08*sales_f
-manager_f["money"] = money_f
-
-manager_s = {
-    "manager" : input("Enter name second manager : "),
-    "sales" : input("Enter sales second manager : "),
-    "money" : 0 ,
-    "reword" : 0
-}
-sales_s = int(manager_s["sales"])
-if sales_s <= 500:
-    money_s = 200 + 0.03*sales_s
-elif sales_s > 500 and sales_s <= 1000:
-    money_s = 200 + 0.05*sales_s
-else:
-    money_s = 200 + 0.08*sales_s
-manager_s["money"] = money_s
-
-manager_t = {
-    "manager" : input("Enter name third manager : "),
-    "sales" : input("Enter sales third manager : "),
-    "money" : 0 ,
-    "reword" : 0
-}
-sales_t = int(manager_t["sales"])
-if sales_t <= 500:
-    money_t = 200 + 0.03*sales_t
-elif sales_t > 500 and sales_t <= 1000:
-    money_t = 200 + 0.05*sales_t
-else:
-    money_t = 200 + 0.08*sales_t
-manager_t["money"] = money_t
-
-
-if int(manager_f["sales"]) > int(manager_s["sales"]):
-    if int(manager_f["sales"]) > int(manager_t["sales"]):
-        best_manager = manager_f["manager"]
-        print("best manager : "   + best_manager)
-        manager_f["reword"] = 200
-    else:
-        best_manager = manager_t["manager"]
-        print("best manager : "  + best_manager)
-        manager_t["reword"] = 200
-else:
-    if int(manager_s["sales"]) > int(manager_t["sales"]):
-        best_manager = manager_s["manager"]
-        print("best manager : " +  best_manager)
-        manager_s["reword"] = 200
-    else:
-        best_manager = manager_t["manager"]
-        print("best manager : " + best_manager)
-        manager_t["reword"] = 200
-
-print(manager_f)
-print(manager_s)
-print(manager_t)
-        
-
+    print("You have not selected the correct operators, try again")
